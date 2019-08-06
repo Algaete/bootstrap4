@@ -11,31 +11,31 @@
 
     <title>PlatziConf Hawaii</title>
   </head>
-  <body>
+  <body data-spy="scroll" data-target="#navbar" data-offset="57">
     <!-- header -->
-    <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
       <div class="container">
         <a class="navbar-brand" href="#"><img src="assets/images/platzi-logo.png" alt="Platzi logo"> Conf Hawaii</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbar">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">La conferencia</a>
+            <li class="nav-item ">
+              <a class="nav-link" href="#main">La conferencia</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Los oradores</a>
+              <a class="nav-link" href="#speakers">Los oradores</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">El lugar y la fecha</a>
+              <a class="nav-link" href="#place-time">El lugar y la fecha</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Conviertete en orador</a>
+              <a class="nav-link" href="#conviertete-en-orador">Conviertete en orador</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-platzi" href="#">Comprar tickets</a>
+              <a class="nav-link text-platzi" href="#" data-toggle="modal" data-target="#modalCompra">Comprar tickets</a>
             </li>
           </ul>
         </div>
@@ -63,7 +63,7 @@
               <div class="row align-items-center">
                 <div class="col-md-6 offset-md-6 text-md-right text-center">
                   <h1>Platzi Conf Hawaii</h1>
-                  <p class="d-none d-md-block">Platzi Conf llega por primera vez a Hawaii! Un evento para
+                  <p class="d-none d-md-block"><abbr data-toggle="tooltip" title="Plataforma e-learning">Platzi</abbr>Conf llega por primera vez a Hawaii! Un evento para
                      compartir con nuestra comunidad el conocimiento y experiencia
                      de los expertos que están creando el futuro del Internet.
                      Ven a conocer a miembros del Team Platzi, a otros estudiantes
@@ -71,7 +71,7 @@
                      Te esperamos!
                    </p>
                    <a href="#" class="btn btn-outline-light">Quiero ser orador</a>
-                   <button type="button" class="btn btn-platzi">Comparar tickets</button>
+                   <button type="button" class="btn btn-platzi" data-toggle="modal" data-target="#modalCompra">Comparar tickets</button>
                 </div>
               </div>
             </div>
@@ -152,16 +152,64 @@
     <section id="place-time">
       <div class="container-fluid">
         <div class="row">
-          <div class="col pr-0 pl-0">
+          <div class="col-12 col-lg-6 pr-0 pl-0">
             <img src="assets/images/honolulu.jpg" alt="isla de honolulu">
           </div>
-          <div class="col">
-            col2
+          <div class="col-12 col-lg-6 pt-4 pb-4">
+            <h2>Honolulu - Octubre 2025</h2>
+            <p>Honolulu u Honolulú es la capital y localidad más grande del estado de Hawái, en los Estados Unidos.Honolulu es la más sureña de entre las principales ciudades estadounidenses. Aunque el nombre de Honolulu se refiere al área urbana en la costa sureste de la isla de Oahu, la ciudad y el condado de Honolulu han formado una ciudad-condado consolidada que cubre toda la isla (aproximadamente 600 km² de superficie).</p>
+            <div class="btn btn-outline-light" href="https://es.wikipedia.org/wiki/Honolulu">Conoce más</div>
           </div>
         </div>
       </div>
     </section>
     <!-- /lugar y fecha  -->
+
+    <!-- conviertete en speaker -->
+    <section id="conviertete-en-orador" class="pt-3 pb-3">
+      <div class="container">
+        <div class="row">
+          <div class="col text-uppercase text-center">
+            <small>Conviértete en un</small>
+            <h2>Orador</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            Anótate como orador para dar una <abbr data-toggle="tooltip" title="charlas de 5 minutos">charla ignite.</abbr>
+            Cuentanos qué quieres hablar!
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 pt-2">
+            <form>
+              <div class="form-row">
+                <div class="col-12 col-md-6 form-group">
+                  <input type="text" class="form-control" placeholder="Nombre">
+                </div>
+                <div class="col-12 col-md-6 form-group">
+                  <input type="text" class="form-control" placeholder="Apellido">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col form-group">
+                  <textarea name="text" class="form-control form-control-lg" placeholder="Sobre qué quieres hablar?"></textarea>
+                  <small class="form-text text-muted">
+                    Recuerda incluir un título para tu charla
+                  </small>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col">
+                  <button type="button" class="btn btn-platzi btn-block">Envíar</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /conviertete en speaker -->
 
     <!-- footer -->
     <footer id="footer" class="pb-4 pt-4">
@@ -191,11 +239,48 @@
         </div>
       </div>
     </footer>
- <!-- /footer -->
+    <!-- /footer -->
+    <!-- Modal -->
+    <div class="modal fade" id="modalCompra" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Comprar tickets</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-row">
+                <div class="form-group col">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">@</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div class="alert alert-warning" role="alert">
+              Recibiras un correo de confirmación si sales sorteado!
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-platzi">Comprar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /modal -->
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
   </body>
 </html>
